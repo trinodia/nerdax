@@ -24,6 +24,20 @@ namespace Nardax
             return value.Substring(startIndex, maxLength);
         }
 
-       
+        /// <summary>
+        /// Klipp av en sträng från höger
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="maxLength"></param>
+        /// <returns></returns>
+        public static string TruncateRight(this string value, int maxLength)
+        {
+            if (value.Length < maxLength)
+            {
+                return value;
+            }
+
+            return value.Substring(0, maxLength);
+        }
     }
 }
