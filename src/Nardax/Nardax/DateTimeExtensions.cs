@@ -4,34 +4,70 @@ namespace Nardax
 {
     public static class DateTimeExtensions
     {
+        /// <summary>
+        /// Avrunda datum neråt
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="timeSpan"></param>
+        /// <returns></returns>
         public static DateTime Floor(this DateTime dateTime, TimeSpan timeSpan)
         {
             var ticks = dateTime.Ticks / timeSpan.Ticks;
             return new DateTime(ticks * timeSpan.Ticks);
         }
 
+        /// <summary>
+        /// Avrunda datum
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="timeSpan"></param>
+        /// <returns></returns>
         public static DateTime Round(this DateTime dateTime, TimeSpan timeSpan)
         {
             var ticks = (dateTime.Ticks + (timeSpan.Ticks / 2) + 1) / timeSpan.Ticks;
             return new DateTime(ticks * timeSpan.Ticks);
         }
 
+        /// <summary>
+        /// Avrunda datum uppåt
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="timeSpan"></param>
+        /// <returns></returns>
         public static DateTime Ceiling(this DateTime dateTime, TimeSpan timeSpan)
         {
             var ticks = (dateTime.Ticks + timeSpan.Ticks - 1) / timeSpan.Ticks;
             return new DateTime(ticks * timeSpan.Ticks);
         }
 
+        /// <summary>
+        /// Returnera datumet som är minst
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static DateTime Min(this DateTime dateTime, DateTime value)
         {
             return dateTime <= value ? dateTime : value;
         }
 
+        /// <summary>
+        /// Returnera datumet som är störst
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static DateTime Max(this DateTime dateTime, DateTime value)
         {
             return dateTime >= value ? dateTime : value;
         }
 
+        /// <summary>
+        /// Returnerar hur många minuter det är från anget datum
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="from"></param>
+        /// <returns></returns>
         public static int MinutesFrom(this DateTime dateTime, DateTime from)
         {
             var timeSpan = (dateTime - from);

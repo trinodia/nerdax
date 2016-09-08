@@ -9,6 +9,13 @@ namespace Nardax
 {
     public static class AssemblyExtensions
     {
+
+        /// <summary>
+        /// Hämta AppSettings på key
+        /// </summary>
+        /// <param name="assembly"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static string GetAppSettingsValue(this Assembly assembly, string key)
         {
             var configuration = ConfigurationManager.OpenExeConfiguration(assembly.Location);

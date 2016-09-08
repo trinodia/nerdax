@@ -5,6 +5,11 @@ namespace Nardax.Serialization
 {
     public class BinarySerializer<T> : ISerializer<T, byte[]>
     {
+        /// <summary>
+        /// Serializera ett värde av valfri typ
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public byte[] Serialize(T value)
         {
             using (var stream = new MemoryStream())
@@ -15,6 +20,11 @@ namespace Nardax.Serialization
             }
         }
 
+        /// <summary>
+        /// Deserialisera ett värde av valfri typ
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
         public T Deserialize(byte[] bytes)
         {
             using (var memoryStream = new MemoryStream(bytes))
