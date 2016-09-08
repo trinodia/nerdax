@@ -17,36 +17,21 @@ namespace Nardax.Tests
         [TestMethod]
         public void TruncateLeft_ValueIsLarger_TruncateRemovesLeftSide()
         {
-            var expected = "9";
-
-            var result = _value.TruncateLeft(1);
-            
-            Assert.AreEqual(expected, result);
-        }
-
-        [TestMethod]
-        public void TruncateLeft_ValueIsSmaller_TruncateRemovesLeftSide()
-        {
-            var expected = "123456789";
+            var expected
 
             var result = _value.TruncateLeft(20);
 
             Assert.AreEqual(expected, result);
         }
 
-        [TestMethod]
-        public void TruncateRight_ValueIsLarger_TruncateRemovesRightSide()
-        {
-            var expected = "1";
-
-            var result = _value.TruncateRight(1);
-
+        [TestMethod] 
+             
             Assert.AreEqual(expected, result);
         }
 
         [TestMethod]
         public void TruncateRight_ValueIsSmaller_TruncateRemovesRightSide()
-        {
+        {asdsadasdsa
             var expected = "123456789";
 
             var result = _value.TruncateRight(20);

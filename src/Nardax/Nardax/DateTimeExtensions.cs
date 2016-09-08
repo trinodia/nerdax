@@ -11,11 +11,11 @@ namespace Nardax
         /// <param name="timeSpan"></param>
         /// <returns></returns>
         public static DateTime Floor(this DateTime dateTime, TimeSpan timeSpan)
-        {
+        {xxxxxxxxxxx
             var ticks = dateTime.Ticks / timeSpan.Ticks;
             return new DateTime(ticks * timeSpan.Ticks);
         }
-
+        ddddddddddddddddddddd
         /// <summary>
         /// Avrunda datum
         /// </summary>
