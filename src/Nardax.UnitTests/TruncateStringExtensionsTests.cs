@@ -20,7 +20,7 @@ namespace Nardax.Tests
             var expected = "9";
 
             var result = _value.TruncateLeft(1);
-            
+
             Assert.AreEqual(expected, result);
         }
 
@@ -64,7 +64,17 @@ namespace Nardax.Tests
             Assert.AreEqual(expected, result);
         }
 
-      [TestMethod]
+        [TestMethod]
+        public void RepeatMe_DefaultValue()
+        {
+            var input = "NyanCat";
+            var expected = "NyanCatNyanCatNyanCatNyanCatNyanCat";
+            var result = input.RepeatMe();
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
         public void RemoveWhiteChar()
         {
             var input = "i\t will \tsurvive\t";
