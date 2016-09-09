@@ -53,8 +53,6 @@ namespace Nardax.Tests
 
             Assert.AreEqual(expected, result);
         }
-    }
-}
 
         [TestMethod]
         public void RepeatMe()
